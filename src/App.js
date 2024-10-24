@@ -31,12 +31,14 @@ function App() {
 
   //startup code to load data
   useEffect(function() {
-    let savedTaskList = localStorage.getItem("taskList");
-    if (savedTaskList) {
-      setTaskList(JSON.parse(savedTaskList));
-      console.log("loaded list as:", savedTaskList);
+    if (typeof window !== 'undefined') {
+      let savedTaskList = localStorage.getItem("taskList");
+      if (savedTaskList) {
+        setTaskList(JSON.parse(savedTaskList));
+        console.log("loaded list as:", savedTaskList);
+      }
+      // setIsFirstLoad(false);
     }
-    // setIsFirstLoad(false);
     isFirstLoad.current = false;
   },[]); //empty brackets means this only runs on startup
 
@@ -44,9 +46,11 @@ function App() {
   //save list when updated
   useEffect(function() {
     if (!isFirstLoad.current) return;
-    let taskListString = JSON.stringify(taskList);
-    localStorage.setItem("taskList", taskListString);
-    console.log("saved list as:", taskListString);
+    if (typeof window !== 'undefined') {
+      let taskListString = JSON.stringify(taskList);
+      localStorage.setItem("taskList", taskListString);
+      console.log("saved list as:", taskListString);
+    }
   },[taskList]); //only run this when taskList updates.
 
 
