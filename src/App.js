@@ -26,29 +26,31 @@ import './App.css';
 function App() {
   const [taskList, setTaskList] = useState([]);
   const [task, setTask] = useState ('');
-  // const [isFirstLoad, setIsFirstLoad] = useState(true);// Add a flag for the first load
   let isFirstLoad = useRef(true);
 
-  //startup code to load data
+  //LOAD LIST ON STARTUP
   useEffect(function() {
+    // because no state variables are passed to this useEffect (in square brackets below),
+    // we can only access state variables using a -closure-, that is, creating a function and calling it.
     const tryLoadingData = function() {
       console.log("log attempt to load");
       // if (typeof window !== 'undefined') {
-        let savedTaskList = localStorage.getItem("taskList");
-        if (savedTaskList) {
-          setTaskList(JSON.parse(savedTaskList));
-          console.log("loaded list as:", savedTaskList);
-        // }
-        // setIsFirstLoad(false);
+      let savedTaskList = localStorage.getItem("taskList");
+      if (savedTaskList) {
+        setTaskList(JSON.parse(savedTaskList));
+        console.log("loaded list as:", savedTaskList);
       }
+      // }
     };
 
     tryLoadingData();
   },[]); //empty brackets means this only runs on startup
 
 
-  //save list when updated
+  //SAVE LIST ON LIST CHANGED
   useEffect(function() {
+    // because taskList is being passed to this useEffect (in square brackets below),
+    // we can access it and only it without a closure.
     console.log("log attempt to save");
     if (!isFirstLoad.current) {
     // if (typeof window !== 'undefined') {
