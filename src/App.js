@@ -31,16 +31,19 @@ function App() {
 
   //startup code to load data
   useEffect(function() {
-    console.log("log attempt to load");
-    // if (typeof window !== 'undefined') {
-      let savedTaskList = localStorage.getItem("taskList");
-      if (savedTaskList) {
-        setTaskList(JSON.parse(savedTaskList));
-        console.log("loaded list as:", savedTaskList);
-      // }
-      // setIsFirstLoad(false);
-    }
-    
+    const tryLoadingData = function() {
+      console.log("log attempt to load");
+      // if (typeof window !== 'undefined') {
+        let savedTaskList = localStorage.getItem("taskList");
+        if (savedTaskList) {
+          setTaskList(JSON.parse(savedTaskList));
+          console.log("loaded list as:", savedTaskList);
+        // }
+        // setIsFirstLoad(false);
+      }
+    };
+
+    tryLoadingData();
   },[]); //empty brackets means this only runs on startup
 
 
