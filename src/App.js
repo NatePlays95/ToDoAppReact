@@ -31,26 +31,32 @@ function App() {
 
   //startup code to load data
   useEffect(function() {
-    if (typeof window !== 'undefined') {
+    console.log("log attempt to load");
+    // if (typeof window !== 'undefined') {
       let savedTaskList = localStorage.getItem("taskList");
       if (savedTaskList) {
         setTaskList(JSON.parse(savedTaskList));
         console.log("loaded list as:", savedTaskList);
-      }
+      // }
       // setIsFirstLoad(false);
     }
-    isFirstLoad.current = false;
+    
   },[]); //empty brackets means this only runs on startup
 
 
   //save list when updated
   useEffect(function() {
-    if (!isFirstLoad.current) return;
-    if (typeof window !== 'undefined') {
+    console.log("log attempt to save");
+    if (!isFirstLoad.current) {
+    // if (typeof window !== 'undefined') {
       let taskListString = JSON.stringify(taskList);
       localStorage.setItem("taskList", taskListString);
       console.log("saved list as:", taskListString);
+    // }
+    } else {
+      isFirstLoad.current = false;
     }
+
   },[taskList]); //only run this when taskList updates.
 
 
