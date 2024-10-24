@@ -36,3 +36,70 @@
     transform: rotate(360deg);
   }
 }
+
+/* Container for the whole app */
+.app-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  height: 100vh;
+  background-color: #f4f5f7;
+}
+
+/* Each task column */
+.task-column {
+  background-color: #ebecf0;
+  border-radius: 10px;
+  padding: 15px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Column titles */
+.column-title {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Styling for individual task cards */
+.task-card {
+  display: flex;
+  justify-content: space-between; /* Pushes the button to the right */
+  align-items: center; /* Vertically centers the content */
+
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  color: #4d4d4d;
+  cursor: pointer;
+}
+
+/* Input field for adding new tasks */
+.add-task-input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Button for adding tasks */
+.add-task-button {
+  padding: 10px;
+  background-color: #0079bf;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-task-button:hover {
+  background-color: #026aa7;
+}

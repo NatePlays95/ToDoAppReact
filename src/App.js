@@ -87,29 +87,41 @@ function App() {
 
 
   return (
-    <div className='App'>
+    <div className='app-container'>
 
       <img src={logo} className="App-logo" alt="logo" />
 
-      <h1>To-Do List</h1>
+      <div className='task-column'>
+        <h2 className='task-column-title'>To-Do List</h2>
 
-      <input
-        type="text"
-        value={task}
-        onChange={(e) => setTask(e.target.value)}
-        placeholder="Add a new task"
-      />
-
-      <button onClick={addTask}>Add Task</button>
-
-      <ul>
-        {taskList.map((task, index) => (
-          <li key={index}>
-            {task}
-            <button onClick={() => deleteTask(index)}>Delete</button>
-          </li>
+        {taskList.map((task_in, index) => (
+          <div className='task-card' key={index} draggable="true" >
+            {task_in}
+            <button className='task-card-delete-btn' onClick={() => deleteTask(index)}>Delete</button>
+          </div>          
         ))}
-      </ul>
+
+        {/* <ul>
+          {taskList.map((task, index) => (
+            <li key={index}>
+              {task}
+              <button onClick={() => deleteTask(index)}>Delete</button>
+            </li>
+          ))}
+        </ul> */}
+
+        <input
+          className='add-task-input'
+          type="text"
+          value={task}
+          onChange={(e) => setTask(e.target.value)}
+          placeholder="Add a new task"
+        />
+        <button className='add-task-button' onClick={addTask}>Add Task</button>
+
+      </div>
+
+
 
     </div>
   );
