@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import React, { useState, useEffect, useRef } from 'react'
 import './App.css';
+import TaskCard from './components/TaskCard';
 
 // function App() {
 //   return (
@@ -94,12 +95,21 @@ function App() {
       <div className='task-column'>
         <h2 className='task-column-title'>To-Do List</h2>
 
-        {taskList.map((task_in, index) => (
-          <div className='task-card' key={index} draggable="true" >
+        {/* {taskList.map((task_in, index) => (
+          <div className='task-card' key={index}>
             {task_in}
             <button className='task-card-delete-btn' onClick={() => deleteTask(index)}>Delete</button>
           </div>          
-        ))}
+        ))} */}
+
+        {taskList.map( function(task_in, index) {
+          return <TaskCard
+            key={index}  
+            task={task_in}
+            index={index}
+            onDelete={deleteTask}
+          />;
+        })}
 
         {/* <ul>
           {taskList.map((task, index) => (

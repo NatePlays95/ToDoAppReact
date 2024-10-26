@@ -1,16 +1,5 @@
-.App {
+/* .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -26,6 +15,17 @@
 
 .App-link {
   color: #61dafb;
+} */
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 @keyframes App-logo-spin {
@@ -37,7 +37,9 @@
   }
 }
 
-/* Container for the whole app */
+
+
+
 .app-container {
   display: flex;
   justify-content: space-around;
@@ -46,7 +48,6 @@
   background-color: #f4f5f7;
 }
 
-/* Each task column */
 .task-column {
   background-color: #ebecf0;
   border-radius: 10px;
@@ -57,27 +58,10 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Column titles */
 .column-title {
   color: #333;
   font-size: 18px;
   margin-bottom: 10px;
-}
-
-/* Styling for individual task cards */
-.task-card {
-  display: flex;
-  justify-content: space-between; /* Pushes the button to the right */
-  align-items: center; /* Vertically centers the content */
-
-  background-color: white;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  font-size: 14px;
-  color: #4d4d4d;
-  cursor: pointer;
 }
 
 /* Input field for adding new tasks */
@@ -101,5 +85,5 @@
 }
 
 .add-task-button:hover {
-  background-color: #026aa7;
+  background-color: lightskyblue;
 }

@@ -1,0 +1,29 @@
+.task-card {
+    display: flex;
+    justify-content: space-between; /* Pushes the button to the right */
+    align-items: center; /* Vertically centers the content */
+  
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    color: #4d4d4d;
+    cursor: pointer;
+}
+
+.task-card-delete-btn {
+    padding: 0.3rem;
+    background-color: #0079bf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.task-card-delete-btn:hover {
+    background-color: lightskyblue;
+    color: white;
+}
